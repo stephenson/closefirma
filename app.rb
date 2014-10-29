@@ -10,7 +10,7 @@ end
 
 post '/install' do
   name = "Close.io".to_uri
-  url = "#{request.env['rack.url_scheme']}://#{request.host}/iframe/#{params[:api_key]}".to_uri
+  url = "https://#{request.host}/iframe/#{params[:api_key]}".to_uri
 
   redirect to("https://app.firmafon.dk/integrations/new?provider=iframe&name=#{name}&url=#{url}")
 end
