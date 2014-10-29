@@ -1,1 +1,12 @@
-<%= @leads["data"].inspect %>
+<% @leads["data"].each do |lead| %>
+  <h2><a href="<%= lead["html_url"] %>" target="_blank"><%= lead["display_name"] %></a></h2>
+
+  <% lead["contacts"].each do |contact| %>
+    <%= contact["name"] %><br />
+  <% end %>
+
+  <h4>Sælgere</h4>
+  <% lead["opportunities"].each do |op| %>
+    <%= op["user_name"] %><br >
+  <% end %>
+<% end %>
