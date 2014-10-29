@@ -4,6 +4,10 @@ require 'uri-handler'
 
 api_url = "https://app.close.io/api/v1"
 
+configure do
+    set :protection, except: [:frame_options]
+end
+
 get '/' do
   erb :index
 end
