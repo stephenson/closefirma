@@ -15,8 +15,16 @@ end
 post '/install' do
   name = "Close.io".to_uri
   url = "https://#{request.host}/iframe/#{params[:api_key]}".to_uri
+  description = "Vis leads fra Close.io direkte i Firmafon".to_uri
+  icon = "http://close.io/static/img/new_logo_only_80.png".to_uri
 
-  redirect to("https://app.firmafon.dk/integrations/new?provider=iframe&name=#{name}&url=#{url}")
+  if Sinatra::Base.development?
+    server = "http://localhost:3000"
+  else
+    server = "https://app.firmafon.dk"
+  end
+
+  redirect to("#{server}/integrations/new?provider=external_app&name=#{name}&url=#{url}&description=#{description}&icon=#{icon}")
 end
 
 get '/iframe/:apikey' do
