@@ -1,14 +1,30 @@
 <% @leads["data"].each do |lead| %>
-  <h2><a href="<%= lead["html_url"] %>" target="_blank"><%= lead["display_name"] %></a></h2>
+  <div class="section">
+    <p>
+      <strong>Lead: </strong>
+      <a href="<%= lead["html_url"] %>" target="_blank"><%= lead["display_name"] %></a>
+    </p>
+  </div>
 
-  <% lead["contacts"].each do |contact| %>
-    <%= contact["name"] %><br />
-  <% end %>
+  <div class="section">
+    <p>
+      <strong>Sælger: </strong>
+      <% lead["opportunities"].each do |op| %>
+        <%= op["user_name"] %>
+      <% end %>
+    </p>
+  </div>
 
-  <h4>Sælgere</h4>
-  <% lead["opportunities"].each do |op| %>
-    <%= op["user_name"] %><br >
-  <% end %>
+  <div class="section">
+    <p>
+      <strong>Kontakter: </strong>
+      <ul>
+        <% lead["contacts"].each do |contact| %>
+          <li><%= contact["name"] %></li>
+        <% end %>
+      </ul>
+    </p>
+  </div>
 <% end %>
 
 <script src="https://app.firmafon.dk/api/iframe.js" type="text/javascript"></script>
