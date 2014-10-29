@@ -5,7 +5,14 @@ require 'uri-handler'
 api_url = "https://app.close.io/api/v1"
 
 get '/' do
-  'Hello world!'
+  erb :index
+end
+
+post '/install' do
+  name = "Close.io".to_uri
+  url = "#{request.env['rack.url_scheme']}://#{request.host}/iframe/#{params[:api_key]}".to_uri
+
+  redirect to("https://app.firmafon.dk/integrations/new?provider=iframe&name=#{name}&url=#{url}")
 end
 
 get '/iframe/:apikey' do
