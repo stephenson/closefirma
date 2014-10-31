@@ -1,6 +1,8 @@
 CloseFirma
 ==========
 
+<b>This is not a Firmafon product, but a open source demo project on how to use our API and integrate a external service. You can use the demo, but with no support</b>
+
 CloseFirma displays leads from Close.io in Firmafon when you receive a call. It uses [Close.io's API](http://developer.close.io/) and [Firmafon's iFrame API](https://dev.firmafon.dk/iframe/).
 
 This is a demo of how you can easily create your own integrations to Firmafon and let others use it. You are welcome to use the Close.io integration, but I recommend that you host it yourself, you can easily deploy it to [Heroku](https://www.heroku.com/) with this button:
