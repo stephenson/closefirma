@@ -1,32 +1,35 @@
-<% @leads["data"].each do |lead| %>
-  <div class="section">
-    <p>
-      <strong>Lead: </strong>
-      <a href="<%= lead["html_url"] %>" target="_blank"><%= lead["display_name"] %></a>
-    </p>
-  </div>
-
-  <div class="section">
-    <p>
-      <strong>Sælger: </strong>
-      <% lead["opportunities"].each do |op| %>
-        <%= op["user_name"] %>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="section">
-    <p>
-      <strong>Kontakter: </strong>
-      <ul>
-        <% lead["contacts"].each do |contact| %>
-          <li><%= contact["name"] %></li>
+<% if @leads["data"].count > 0 %>
+  <% @leads["data"].each do |lead| %>
+    <div class="section">
+      <p>
+        <strong>Lead: </strong>
+        <a href="<%= lead["html_url"] %>" target="_blank"><%= lead["display_name"] %></a>
+      </p>
+    </div>
+  
+    <div class="section">
+      <p>
+        <strong>Sælger: </strong>
+        <% lead["opportunities"].each do |op| %>
+          <%= op["user_name"] %>
         <% end %>
-      </ul>
-    </p>
-  </div>
+      </p>
+    </div>
+  
+    <div class="section">
+      <p>
+        <strong>Kontakter: </strong>
+        <ul>
+          <% lead["contacts"].each do |contact| %>
+            <li><%= contact["name"] %></li>
+          <% end %>
+        </ul>
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  Der blev ikke fundet nogle leads.
 <% end %>
-
 <script src="https://app.firmafon.dk/api/iframe.js" type="text/javascript"></script>
 
 <script type="text/javascript">
