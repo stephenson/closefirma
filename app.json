@@ -1,8 +1,11 @@
 {
-  "name": "Close.io integration to Firmafon",
-  "description": "Integrate Firmafon with Close.io",
-  "repository": "https://github.com/stephenson/closefirma.git",
+  "name": "CloseIo and Firmafon",
+  "description": "Integration CloseIo with Firmafon",
+  "keywords": [
+    "close",
+    "firmafon"
+  ],
   "website": "https://github.com/stephenson/closefirma",
-  "logo": "http://close.io/static/img/new_logo_only_80.png",
-  "keywords": ["sinatra", "firmafon", "close.io", "ruby"],
+  "repository": "https://github.com/stephenson/closefirma",
+  "success_url": "/"
 }
